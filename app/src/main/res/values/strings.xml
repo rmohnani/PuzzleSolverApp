@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Puzzle Solver Java</string>
+    <string name="title_home">LEU Puzzle Solver</string>
+    <string name="puzzle_picture_description_home">Picture of LEU Puzzle</string>
+    <string name="select_board_string">Select Board</string>
+    <string name="triangle_board_description">Triangle Board</string>
+    <string name="pentagon_board_description">Pentagon Board</string>
+    <string name="rectangle_board_description">Rectangle Board</string>
+</resources>
