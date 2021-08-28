@@ -1,5 +1,7 @@
 package com.example.puzzlesolverjava;
 
+import android.graphics.Color;
+
 public class gameCircle {
 
     private circleObject _circle;
@@ -16,8 +18,8 @@ public class gameCircle {
     }
 
     public void setLocation(int row, int col) {
-        _circle.setCenterX((col / Constants.NCOLS) * _view.getWidth());
-        _circle.setCenterY((row / Constants.NROWS) * _view.getHeight());
+        _circle.setCenterX((col * 2 * Constants.CIRCLE_WIDTH) + Constants.BOARD_X_OFFSET);
+        _circle.setCenterY((row * 2 * Constants.CIRCLE_WIDTH) + Constants.BOARD_Y_OFFSET);
         _view.invalidate();
     }
 
@@ -37,9 +39,9 @@ public class gameCircle {
         return _circle;
     }
 
-//    public void setColour(String colorString) {
-//        _circle.setFillColor(colorString);
-//    }
+    public void setColour(String colorString) {
+        _circle.setPaint(Color.parseColor(colorString));
+    }
 
     public boolean canMoveTo(int colChange, int rowChange) {
         boolean canMove = true;

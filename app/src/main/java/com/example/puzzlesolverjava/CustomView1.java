@@ -19,17 +19,17 @@ public class CustomView1 extends androidx.appcompat.widget.AppCompatImageView {
     public CustomView1(Context context) {
         super(context);
         this.setBackgroundColor(Color.GREEN);
-        _bitmap = Bitmap.createBitmap(300,400,Bitmap.Config.ARGB_8888);
+        _bitmap = Bitmap.createBitmap(Constants.BOARD_WIDTH,Constants.BOARD_HEIGHT,Bitmap.Config.ARGB_8888);
     }
 
     public CustomView1(Context context, AttributeSet attrs) {
         super(context, attrs);
-        _bitmap = Bitmap.createBitmap(300,400,Bitmap.Config.ARGB_8888);
+        _bitmap = Bitmap.createBitmap(Constants.BOARD_WIDTH,Constants.BOARD_HEIGHT,Bitmap.Config.ARGB_8888);
     }
 
     public CustomView1(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        _bitmap = Bitmap.createBitmap(300,400,Bitmap.Config.ARGB_8888);
+        _bitmap = Bitmap.createBitmap(Constants.BOARD_WIDTH,Constants.BOARD_HEIGHT,Bitmap.Config.ARGB_8888);
     }
 
     @Override
@@ -41,9 +41,7 @@ public class CustomView1 extends androidx.appcompat.widget.AppCompatImageView {
 //            circle.draw(canvas);
 //        }
         _canvas = canvas;
-//        super.onDraw(canvas);
-//        this.postInvalidate();
-//        this.postInvalidateDelayed(1000);
+        postInvalidate();
 
     }
 

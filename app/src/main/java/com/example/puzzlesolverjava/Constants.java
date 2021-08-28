@@ -5,7 +5,7 @@ import android.graphics.Color;
 public class Constants {
 
     // width of each square
-    public static final int CIRCLE_WIDTH = 100;
+    public static final int CIRCLE_WIDTH = 45;
 
     // coordinates for circles in each puzzle piece
 
@@ -32,8 +32,8 @@ public class Constants {
             {2 * CIRCLE_WIDTH, 2 * CIRCLE_WIDTH}, {0, 4 * CIRCLE_WIDTH}};
     public static final int[][] PURPLE_LINE_PIECE = {{0, 0}, {0, 2 * CIRCLE_WIDTH}, {0, 4 * CIRCLE_WIDTH}, {0, 6 * CIRCLE_WIDTH}};
 
-    public static final int BOARD_WIDTH = 440;
-    public static final int BOARD_HEIGHT = 400;
+    public static final int BOARD_WIDTH = 11 * 2 * CIRCLE_WIDTH;
+    public static final int BOARD_HEIGHT = 10 * 2 * CIRCLE_WIDTH;
     public static final int X_OFFSET = 5 * CIRCLE_WIDTH;
     public static final int Y_OFFSET = 1 * CIRCLE_WIDTH;
     public static final int BOARD_X_OFFSET = 1 * CIRCLE_WIDTH;

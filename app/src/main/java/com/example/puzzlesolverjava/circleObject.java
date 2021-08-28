@@ -9,8 +9,8 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 
 public class circleObject extends Drawable {
-    private int _centerX;
-    private int _centerY;
+    private float _centerX;
+    private float _centerY;
     private int _radius;
     private int _fillColour;
     private Paint _paint;
@@ -25,29 +25,26 @@ public class circleObject extends Drawable {
         _paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         _paint.setColor(fillColour);
         _view.addObject(this);
-//        this.drawCircle();
     }
 
-    public void drawCircle() {
-        _view.getCanvas().drawCircle(_centerX,_centerY,_radius,_paint);
-        _view.setImageBitmap(_view.getBitmap());
-        _view.invalidate();
-    }
-
-    public void setCenterX(int x) {
+    public void setCenterX(float x) {
         _centerX = x;
     }
 
-    public void setCenterY(int y) {
+    public void setCenterY(float y) {
         _centerY = y;
     }
 
-    public int getCenterX() {
+    public float getCenterX() {
         return _centerX;
     }
 
-    public int getCenterY() {
+    public float getCenterY() {
         return _centerY;
+    }
+
+    public void setPaint(int colour) {
+        _paint.setColor(colour);
     }
 
     @Override

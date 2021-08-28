@@ -8,8 +8,8 @@
 
     <com.example.puzzlesolverjava.CustomView1
         android:id="@+id/drawed_circle"
-        android:layout_width="367dp"
-        android:layout_height="324dp"
+        android:layout_width="364dp"
+        android:layout_height="380dp"
         android:contentDescription="@string/stuff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
