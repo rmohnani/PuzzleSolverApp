@@ -30,8 +30,8 @@ public class Activity2 extends AppCompatActivity {
         triangleBoard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), Activity2.class);
-                startActivity(myIntent);
+                Intent myIntent2 = new Intent(view.getContext(), Activity3.class);
+                startActivity(myIntent2);
             }
         });
 
