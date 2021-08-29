@@ -6,4 +6,5 @@
     <string name="triangle_board_description">Triangle Board</string>
     <string name="pentagon_board_description">Pentagon Board</string>
     <string name="rectangle_board_description">Rectangle Board</string>
+    <string name="stuff">stuff</string>
 </resources>
