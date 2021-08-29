@@ -3,7 +3,6 @@ package com.example.puzzlesolverjava;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.util.AttributeSet;
 
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ public class CustomView1 extends androidx.appcompat.widget.AppCompatImageView {
 
     public CustomView1(Context context) {
         super(context);
-        this.setBackgroundColor(Color.GREEN);
+//        this.setBackgroundColor(Color.GREEN);
         _bitmap = Bitmap.createBitmap(Constants.BOARD_WIDTH,Constants.BOARD_HEIGHT,Bitmap.Config.ARGB_8888);
     }
 
@@ -34,12 +33,12 @@ public class CustomView1 extends androidx.appcompat.widget.AppCompatImageView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        for(circleObject circle: _objects) {
-            circle.draw(canvas);
-        }
-//        for (gameCircle circle: _gameCircles) {
+//        for(circleObject circle: _objects) {
 //            circle.draw(canvas);
 //        }
+        for (gameCircle circle: _gameCircles) {
+            circle.getCircle().draw(canvas);
+        }
         _canvas = canvas;
         postInvalidate();
 
@@ -64,5 +63,14 @@ public class CustomView1 extends androidx.appcompat.widget.AppCompatImageView {
     public ArrayList<circleObject> getObjects() {
         return _objects;
     }
+
+    public void addGameCircle(gameCircle gameCircle) {
+        _gameCircles.add(gameCircle);
+    }
+
+    public ArrayList<gameCircle> getGameCircles() {
+        return _gameCircles;
+    }
+
 
 }

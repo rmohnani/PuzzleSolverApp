@@ -5,14 +5,15 @@ import android.graphics.Color;
 public class gameCircle {
 
     private circleObject _circle;
-    private circleObject[][] _gameCircleArray;
+    private gameCircle[][] _gameCircleArray;
     private CustomView1 _view;
 
-    public gameCircle(int row, int col, int colour, circleObject[][] board, CustomView1 view) {
+    public gameCircle(int row, int col, int colour, gameCircle[][] board, CustomView1 view) {
         _gameCircleArray = board;
         _view = view;
         _circle = new circleObject(Constants.CIRCLE_WIDTH, colour, view);
-//        _view.addGameCircle()
+        _view.addObject(_circle);
+        _view.addGameCircle(this);
 
         this.setLocation(row, col);
     }
@@ -28,11 +29,11 @@ public class gameCircle {
     }
 
     public int getCol() {
-        return (int) (( _circle.getCenterX() / _view.getWidth()) * Constants.NCOLS);
+        return (int) (( _circle.getCenterX()) - Constants.CIRCLE_WIDTH) / (2 * Constants.CIRCLE_WIDTH);
     }
 
     public int getRow() {
-        return (int) (( _circle.getCenterY() / _view.getHeight()) * Constants.NROWS);
+        return (int) (_circle.getCenterY() - Constants.CIRCLE_WIDTH) / (2 * Constants.CIRCLE_WIDTH);
     }
 
     public circleObject getCircle() {
@@ -40,7 +41,7 @@ public class gameCircle {
     }
 
     public void setColour(String colorString) {
-        _circle.setPaint(Color.parseColor(colorString));
+        _circle.setFillColour(Color.parseColor(colorString));
     }
 
     public boolean canMoveTo(int colChange, int rowChange) {

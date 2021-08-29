@@ -36,10 +36,10 @@ public class Constants {
     public static final int BOARD_HEIGHT = 10 * 2 * CIRCLE_WIDTH;
     public static final int X_OFFSET = 5 * CIRCLE_WIDTH;
     public static final int Y_OFFSET = 1 * CIRCLE_WIDTH;
-    public static final int BOARD_X_OFFSET = 1 * CIRCLE_WIDTH;
-    public static final int BOARD_Y_OFFSET = 1 * CIRCLE_WIDTH;
+    public static final int BOARD_X_OFFSET = 2 * CIRCLE_WIDTH;
+    public static final int BOARD_Y_OFFSET = 2 * CIRCLE_WIDTH;
     public static final double DEGREES_90 = Math.PI / 2;
-    public static final int BOARD_COLOUR = Color.parseColor("D2691E");
+    public static final int BOARD_COLOUR = Color.parseColor("#D2691E");
     public static final int ROWS = BOARD_HEIGHT / (2 * CIRCLE_WIDTH);
     public static final int COLS = BOARD_WIDTH / (2 * CIRCLE_WIDTH);
     public static final int LABEL_HEIGHT = 20;
