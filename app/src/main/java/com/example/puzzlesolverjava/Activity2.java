@@ -31,7 +31,26 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent2 = new Intent(view.getContext(), Activity3.class);
+                myIntent2.putExtra("board_type", "triangle");
                 startActivity(myIntent2);
+            }
+        });
+
+        rectangleBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent3 = new Intent(view.getContext(), Activity3.class);
+                myIntent3.putExtra("board_type", "rectangle");
+                startActivity(myIntent3);
+            }
+        });
+
+        pentagonBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent4 = new Intent(view.getContext(), Activity3.class);
+                myIntent4.putExtra("board_type", "pentagon");
+                startActivity(myIntent4);
             }
         });
 
