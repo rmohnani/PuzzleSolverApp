@@ -25,7 +25,12 @@ public class gameCircle {
     }
 
     public void translateCircleLocation(int colChange, int rowChange) {
-        this.setLocation(this.getRow() + rowChange, this.getCol() + colChange);
+        int newRow = this.getRow() + rowChange;
+        int newCol = this.getCol() + colChange;
+        _gameCircleArray[newRow][newCol] = new gameCircle(newRow, newCol, _circle.getFillColour(),_gameCircleArray,_view);
+        _gameCircleArray[newRow][newCol].getCircle().setType("piece");
+//        _gameCircleArray[this.getRow()][this.getCol()].getCircle().setType("");
+        this.setLocation(newRow, newCol);
     }
 
     public int getCol() {
@@ -60,7 +65,7 @@ public class gameCircle {
                 || (row + rowChange < 0) || (col + colChange < 0)) {
             return false;
         }
-        if (_gameCircleArray[row + rowChange][col + colChange] != null) {
+        if (_gameCircleArray[row + rowChange][col + colChange].getCircle().getType() != "empty") {
             canMove = false;
         }
         return canMove;

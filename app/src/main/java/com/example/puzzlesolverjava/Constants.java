@@ -40,11 +40,29 @@ public class Constants {
     public static final int BOARD_Y_OFFSET = 2 * CIRCLE_WIDTH;
     public static final double DEGREES_90 = Math.PI / 2;
     public static final int BOARD_COLOUR = Color.parseColor("#D2691E");
+    public static final int EMPTY_COLOUR = Color.parseColor("#000000");
     public static final int ROWS = BOARD_HEIGHT / (2 * CIRCLE_WIDTH);
     public static final int COLS = BOARD_WIDTH / (2 * CIRCLE_WIDTH);
     public static final int LABEL_HEIGHT = 20;
     public static final int LABEL_SPACING = 60;
     public static final int NCOLS = 11;
     public static final int NROWS = 10;
+
+//    public static final int WHITE_COLOUR = Color.parseColor("#FFFFFF");
+    public static final int WHITE_COLOUR2 = Color.parseColor("#000000");
+    public static final int DGREEN_COLOUR = Color.parseColor("#006400");
+    public static final int BLUE_COLOUR = Color.parseColor("#0000FF");
+    public static final int ORANGE_COLOUR = Color.parseColor("#FFA500");
+    public static final int SKYBLUE_COLOUR = Color.parseColor("#87CEEB");
+    public static final int YELLOW_COLOUR = Color.parseColor("#FFFF00");
+    public static final int GRAY_COLOUR = Color.parseColor("#808080");
+    public static final int PINK_COLOUR = Color.parseColor("#FFC0CB");
+    public static final int GREEN_COLOUR = Color.parseColor("#008000");
+    public static final int BISQUE_COLOUR = Color.parseColor("#FFE4C4");
+    public static final int RED_COLOUR = Color.parseColor("#FF0000");
+    public static final int PURPLE_COLOUR = Color.parseColor("#800080");
+
+
+
 }
 

@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTintMode="add"
     tools:context=".Activity3">
 
     <com.example.puzzlesolverjava.CustomView1
-        android:id="@+id/drawed_circle"
+        android:id="@+id/board"
         android:layout_width="393dp"
         android:layout_height="395dp"
         android:contentDescription="@string/stuff"
@@ -16,5 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498" />
+
+    <Button
+        android:id="@+id/back_button2"
+        android:layout_width="49dp"
+        android:layout_height="47dp"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconPadding="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="back button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

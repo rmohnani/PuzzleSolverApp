@@ -17,7 +17,7 @@ public class Board {
         for (int row = 0; row < Constants.ROWS; row++) {
             for (int col = 0; col < Constants.COLS; col++) {
                 _gameCircleArray[row][col] = new gameCircle(row, col,Constants.BOARD_COLOUR, _gameCircleArray, _view);
-                _gameCircleArray[row][col].getCircle().setEmpty(true);
+                _gameCircleArray[row][col].getCircle().setType("empty");
             }
         }
         // graphical setup
@@ -44,11 +44,11 @@ public class Board {
         int getRidOff = rowBegin - rowEnd;
         for (int col = colBegin; col < colEnd; col++) {
             for (int i = 0; i < getRidOff; i++) {
-                if (_gameCircleArray[i][col].getCircle().getEmpty() == true) {
-                    _gameCircleArray[i][col].getCircle().setEmpty(false);
-                    _gameCircleArray[i][col] = new gameCircle(i, col,Constants.BOARD_COLOUR, _gameCircleArray, _view);
-                    _gameCircleArray[i][col].setLocation(i, col);
-                    _view.addGameCircle(_gameCircleArray[i][col]);
+                if (_gameCircleArray[i][col].getCircle().getType() == "empty") {
+                    _gameCircleArray[i][col].getCircle().setType("board");
+//                    _gameCircleArray[i][col] = new gameCircle(i, col,Constants.BOARD_COLOUR, _gameCircleArray, _view);
+//                    _gameCircleArray[i][col].setLocation(i, col);
+//                    _view.addGameCircle(_gameCircleArray[i][col]);
                 }
             }
             getRidOff -= 1;
@@ -60,11 +60,11 @@ public class Board {
     public void cordonOffRectangle(int colBegin, int rowBegin, int colEnd, int rowEnd) {
         for (int col = colBegin; col < colEnd; col++) {
             for (int row = rowBegin; row < rowEnd; row++) {
-                if (_gameCircleArray[row][col].getCircle().getEmpty() == true) {
-                    _gameCircleArray[row][col].getCircle().setEmpty(false);
-                    _gameCircleArray[row][col] = new gameCircle(row, col,Constants.BOARD_COLOUR, _gameCircleArray, _view);
-                    _gameCircleArray[row][col].setLocation(row, col);
-                    _view.addGameCircle(_gameCircleArray[row][col]);
+                if (_gameCircleArray[row][col].getCircle().getType() == "empty") {
+                    _gameCircleArray[row][col].getCircle().setType("board");
+//                    _gameCircleArray[row][col] = new gameCircle(row, col,Constants.BOARD_COLOUR, _gameCircleArray, _view);
+//                    _gameCircleArray[row][col].setLocation(row, col);
+//                    _view.addGameCircle(_gameCircleArray[row][col]);
                 }
             }
         }
@@ -76,11 +76,11 @@ public class Board {
             for(int col = colBegin; col < colEnd; col++) {
                 for (int row = rowBegin; row < rowEnd; row++) {
                     if (row - col >= rowBegin - colBegin) {
-                        if (_gameCircleArray[row][col].getCircle().getEmpty() == true) {
-                            _gameCircleArray[row][col].getCircle().setEmpty(false);
-                            _gameCircleArray[row][col] = new gameCircle(row, col, Constants.BOARD_COLOUR, _gameCircleArray, _view);
-                            _gameCircleArray[row][col].setLocation(row, col);
-                            _view.addGameCircle(_gameCircleArray[row][col]);
+                        if (_gameCircleArray[row][col].getCircle().getType() == "empty") {
+                            _gameCircleArray[row][col].getCircle().setType("board");
+//                            _gameCircleArray[row][col] = new gameCircle(row, col, Constants.BOARD_COLOUR, _gameCircleArray, _view);
+//                            _gameCircleArray[row][col].setLocation(row, col);
+//                            _view.addGameCircle(_gameCircleArray[row][col]);
                         }
                     }
                 }
@@ -90,11 +90,11 @@ public class Board {
             for (int col = colBegin; col < colEnd; col++) {
                 for (int row = rowEnd; row < rowBegin; row++) {
                     if (col - row >= colBegin - rowEnd) {
-                        if (_gameCircleArray[row][col].getCircle().getEmpty() == true) {
-                            _gameCircleArray[row][col].getCircle().setEmpty(false);
-                            _gameCircleArray[row][col] = new gameCircle(row, col, Constants.BOARD_COLOUR, _gameCircleArray, _view);
-                            _gameCircleArray[row][col].setLocation(row, col);
-                            _view.addGameCircle(_gameCircleArray[row][col]);
+                        if (_gameCircleArray[row][col].getCircle().getType() == "empty") {
+                            _gameCircleArray[row][col].getCircle().setType("board");
+//                            _gameCircleArray[row][col] = new gameCircle(row, col, Constants.BOARD_COLOUR, _gameCircleArray, _view);
+//                            _gameCircleArray[row][col].setLocation(row, col);
+//                            _view.addGameCircle(_gameCircleArray[row][col]);
                         }
                     }
                 }
@@ -113,6 +113,7 @@ public class Board {
         this.cordonOffRightTriangle(2,5,5,1);
 
         _gameCircleArray[6][7] = new gameCircle(6, 7, Constants.BOARD_COLOUR, _gameCircleArray, _view);
+        _gameCircleArray[6][7].getCircle().setType("board");
         _gameCircleArray[6][7].setLocation(6, 7);
         _view.addGameCircle(_gameCircleArray[6][7]);
     }

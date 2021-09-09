@@ -17,14 +17,16 @@ public class circleObject extends Drawable {
     private Paint _paint;
     private CustomView1 _view;
     private Boolean _empty;
+    private String _type;
 
     public circleObject(int radius, int fillColour, CustomView1 view) {
         _radius = radius;
         _fillColour = fillColour;
         _view = view;
-        _centerX = view.getBitmap().getWidth() /2;
-        _centerY = view.getBitmap().getHeight()/2;
-        _empty = false;
+        _centerX = 0;
+        _centerY = 0;
+        _type = "empty";
+//        _empty = false;
         _paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         _view.addObject(this);
     }
@@ -45,22 +47,44 @@ public class circleObject extends Drawable {
         return _centerY;
     }
 
-    public void setPaint(int colour) {
-        _paint.setStyle(Paint.Style.FILL);
+    public void setPaint(int colour, Paint.Style style) {
+        _paint.setStyle(style);
         _paint.setColor(colour);
+    }
+
+    public void setType(String type) {
+        _type = type;
+    }
+
+    public String getType() {
+        return _type;
+    }
+
+    public void type_draw() {
+        switch (_type) {
+            case "board":
+                this.setPaint(Constants.BOARD_COLOUR, Paint.Style.FILL);
+//                this.setPaint(Constants.BOARD_COLOUR, Paint.Style.STROKE);
+                break;
+            case "empty":
+                this.setPaint(Color.BLACK, Paint.Style.STROKE);
+                _paint.setStrokeWidth(5);
+                break;
+            case "piece":
+                this.setPaint(_fillColour, Paint.Style.FILL);
+//                this.setPaint(_fillColour, Paint.Style.STROKE);
+                break;
+        }
     }
 
     public void setFillColour(int colour) {
         _fillColour = colour;
     }
 
-    public void addStroke() {
-        if (_empty) {
-            _paint.setStyle(Paint.Style.STROKE);
-            _paint.setColor(Color.BLACK);
-            _paint.setStrokeWidth(5);
-        }
+    public int getFillColour() {
+        return _fillColour;
     }
+
 
     public void setEmpty(Boolean val) {
         _empty = val;
@@ -72,8 +96,7 @@ public class circleObject extends Drawable {
 
     @Override
     public void draw(@NonNull Canvas canvas) {
-        this.setPaint(_fillColour);
-        this.addStroke();
+        this.type_draw();
         canvas.drawCircle(_centerX,_centerY,_radius,_paint);
         _view.setCanvas(canvas);
         _view.setImageBitmap(_view.getBitmap());
